@@ -7,7 +7,11 @@
         "funlog": "bin/log.js"
     },
     "scripts": {
-        "fill": "your scripts here"
+        "test": "mocha test/test.mjs",
+        "cov": "nyc npm test",
+        "test1": "npm run compile; ./bin/calc2js.mjs test/data/test1.calc ",
+        "compile": "jison src/grammar.jison src/lexer.l -o src/calc.js",
+        "clean": "rm -f test/data/out*.js; rm -f src/calc.js;"
     },
     "dependencies": {
         "acorn": "^8.8.2",
