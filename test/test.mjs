@@ -34,7 +34,6 @@ for (let i = 0; i < Test.length; i++) {
     }
 
     await import(t.output);
-    outputs.push('');  // Add a newline at the end.
     console.log = oldLog;
     const correctOut = await fs.readFile(t.correctOut, 'utf-8');
     assert.equal(removeSpaces(outputs.join('\n')), removeSpaces(correctOut));

@@ -205,3 +205,5 @@ Usamos este comando para publicar el paquete:
 ```bash
 npm publish --access=public
 ```
+
+![npm](./docs/npm.png)
