@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
-import { program } from "commander";
-import { createRequire } from "module";
+//import { program } from "commander";
+const { program } = require("commander");
+//import { createRequire } from "module";
+const createRequire = require("module").createRequire;
 const require = createRequire(import.meta.url);
 const { version } = require("../package.json");
-import { transpile } from "../src/logging-espree.js";
+//import { transpile } from "../src/logging-espree.js";
+const { transpile } = require("../src/logging-espree.js");
 
 program
   .version(version)

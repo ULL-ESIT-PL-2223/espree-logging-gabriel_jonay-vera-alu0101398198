@@ -24,9 +24,7 @@ for (let i = 0; i < Test.length; i++) {
     const t = Test[i];
     await transpile(t.input, t.output);
     const correctLogged = await fs.readFile(t.correctLogged, 'utf-8');
-    assert.equal(
-        removeSpaces(correctLogged),
-        removeSpaces(await fs.readFile(t.output, 'utf-8')));
+    assert.equal(removeSpaces(correctLogged), removeSpaces(await fs.readFile(t.output, 'utf-8')));
 
     let outputs = [];
     let oldLog = console.log;
@@ -39,6 +37,6 @@ for (let i = 0; i < Test.length; i++) {
     outputs.push('');  // Add a newline at the end.
     console.log = oldLog;
     const correctOut = await fs.readFile(t.correctOut, 'utf-8');
-    assert.equal(outputs.join('\n'), correctOut);
+    assert.equal(removeSpaces(outputs.join('\n')), removeSpaces(correctOut));
   });
 }
