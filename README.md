@@ -189,3 +189,19 @@ jobs:
 ```
 
 ![github](./docs/github.png)
+
+## NPM
+
+Se ha publicado el paquete en NPM.
+
+Usamos este comando para loguearnos en NPM:
+
+```bash
+npm login
+```
+
+Usamos este comando para publicar el paquete:
+
+```bash
+npm publish --access=public
+```
